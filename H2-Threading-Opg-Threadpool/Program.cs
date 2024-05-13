@@ -5,11 +5,10 @@ using H2_Threading_Opg_Threadpool;
 ThreadPoolDemo threadPoolDemo = new ThreadPoolDemo();
 //threadPoolDemo.Main();
 
+//Opgave 1 and 2
+Opgave1And2 opgave = new Opgave1And2();
+//opgave.Main();
 
-//Opgave 1
-Opgave1 opgave1 = new Opgave1();
-//opgave1.Main();
-
-//Opgave 2
-Opgave2 opgave2 = new Opgave2();
-opgave2.Main();
+//Opgave 3
+Opgave3 opgave3 = new Opgave3();
+//opgave3.Main();

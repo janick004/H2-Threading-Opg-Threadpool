@@ -8,12 +8,12 @@ using System.Diagnostics;
 
 namespace H2_Threading_Opg_Threadpool
 {
-	internal class Opgave1
+	internal class Opgave1And2
 	{
-		//ThreadPool.QueueUserWorkItem(Process);
-
-
-		public void Main()
+        /// <summary>
+        /// This code take long to execute for the assignment 2 
+        /// </summary>
+        public void Main()
 		{
 			Stopwatch mywatch = new Stopwatch();
 			Console.WriteLine("Thread Pool Execution");
@@ -33,20 +33,26 @@ namespace H2_Threading_Opg_Threadpool
 
 		static void ProcessWithThreadPoolMethod()
 		{
-			for (int i = 0; i <= 10; i++)
+			for (int i = 0; i < 100000; i++)
 			{
-				ThreadPool.QueueUserWorkItem(Process);
+				for (int j = 0; j < 100000; j++)
+				{
+					ThreadPool.QueueUserWorkItem(Process);
+				}
 			}
 		}
 
 		static void ProcessWithThreadMethod()
 		{
-			for (int i = 0; i <= 10; i++)
-			{
-				Thread obj = new Thread(Process);
-				obj.Start();
-			}
-		}
+            for (int i = 0; i < 100000; i++)
+            {
+                for (int j = 0; j < 100000; j++)
+                {
+                    Thread obj = new Thread(Process);
+					obj.Start();
+				}
+            }
+        }
 
 		/* !Svar til opgaven!
 		 * 
